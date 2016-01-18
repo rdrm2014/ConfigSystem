@@ -1,0 +1,14 @@
+<ion-view view-title="{{bluetooth}}">
+  <ion-content class="padding">
+    <form novalidate class="simple-form">
+      Text: <input value="" type="text" placeholder="Message" ng-model="message"/><br/>
+      <button ng-click="disconnect()">Disconnect</button>
+      <button ng-click="sendData(message)">Add message</button>
+      <button ng-click="sendData('#CON ALL')">Get Peers</button>
+    </form>
+
+    <ul ng-repeat="message in messages">
+      <li>{{message.name}}</li>
+    </ul>
+  </ion-content>
+</ion-view>

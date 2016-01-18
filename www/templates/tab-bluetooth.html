@@ -1,0 +1,20 @@
+<ion-view view-title="Bluetooth">
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.active">
+        Bluetooth
+    </ion-toggle>
+      <br>
+      <button ng-click="scan()">Update</button>
+    </ion-list>
+    <ion-list ng-show="settings.active">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="bluetooth in bluetooths" type="item-text-wrap"><!--  href="#/tab/bluetooth/{{bluetooth.address}}">-->
+        <h2>{{bluetooth.name}}</h2>
+        <p>{{bluetooth.address}}</p>
+        <button  ng-click="connect(bluetooth.address)"></button>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-assertive" ng-click="refresh()">Update</ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
